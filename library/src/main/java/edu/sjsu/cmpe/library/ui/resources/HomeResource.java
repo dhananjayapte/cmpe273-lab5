@@ -34,7 +34,7 @@ public class HomeResource {
     @Path("v1/books/{isbn}")
     public void updateBooks(@PathParam("isbn") LongParam isbn,
     	    @DefaultValue("available") @QueryParam("status") Status status) {
-        System.out.println("Test PUT via JQUery Ajax----"+status);
+        //System.out.println("Test PUT via JQUery Ajax----"+status);
         Book book = bookRepository.getBookByISBN(isbn.get());
     	book.setStatus(status);
         bookRepository.updateLibrary(book);
